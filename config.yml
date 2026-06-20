@@ -8,8 +8,8 @@ navigation:
   after: '🔄 After'
 
 links:
-  resources: '📚 Underpinning Theories & Resources'
-  feedback: '💡 Suggest Additions & Feedback Form'
+  resources: '📚 Additional Resources'
+  feedback: '💡 Give Feedback & Suggest Content'
   back_to_dashboard: '🏠 Toolkit Dashboard'
   back_button: '← Back to Toolkit Dashboard'
   a11y_settings: '♿ Accessibility Settings'
