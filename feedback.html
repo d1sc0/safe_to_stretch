@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Safe to Stretch Toolkit</title>
+  <meta name="description" content="Submit feedback or suggest additions to the Safe to Stretch Facilitator Toolkit.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <!-- JS-YAML for parsing YAML config client-side -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+</head>
+<body class="theme-light">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="header-content">
+        <div class="brand">
+          <h1>Safe to Stretch</h1>
+          <p class="tagline">Flattening Workplace Power Dynamics in Learning & Facilitation</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Back Link -->
+    <div style="margin-bottom: 24px;">
+      <a href="index.html" id="btn-back-dashboard" class="btn btn-secondary" aria-label="Go back to the main toolkit dashboard">&larr; Back to Toolkit Dashboard</a>
+    </div>
+
+    <!-- Main Content Form -->
+    <main id="main-content">
+      <div class="card feedback-section">
+        <div class="feedback-header">
+          <h2>💡 Suggest Additions or Give Feedback</h2>
+          <p>Are you using this tool in your workshops? Have ideas to improve accessibility, flatten power structures, or expand content? We would love to hear from you!</p>
+        </div>
+
+        <form id="form-feedback" class="feedback-form-grid">
+          <!-- Honeypot Spam Protection -->
+          <input type="checkbox" name="botcheck" id="botcheck" style="display: none;">
+
+          <div class="form-group">
+            <label for="feedback-name">Your Name</label>
+            <input type="text" id="feedback-name" placeholder="e.g. Sarah Jenkins" required>
+          </div>
+          <div class="form-group">
+            <label for="feedback-email">Your Email Address</label>
+            <input type="email" id="feedback-email" placeholder="e.g. sarah@learningdesign.com" required>
+          </div>
+          <div class="form-group full-width">
+            <label for="feedback-type">Feedback Type</label>
+            <select id="feedback-type" required>
+              <option value="" disabled selected>Select a category...</option>
+              <option value="Suggestion">General Suggestion</option>
+              <option value="Addition">Content Addition/Resource Proposal</option>
+              <option value="Bug">Bug or Display Issue</option>
+              <option value="A11y">Accessibility Feedback</option>
+              <option value="Share">Sharing a facilitation story</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="feedback-message">Message / Suggestion</label>
+            <textarea id="feedback-message" rows="5" placeholder="Share details of your experience, specific additions to the toolkit, or questions here..." required></textarea>
+          </div>
+          <div class="form-actions full-width">
+            <button type="submit" class="btn btn-primary" id="btn-submit-feedback">✉️ Submit Feedback</button>
+          </div>
+        </form>
+        
+        <div id="feedback-success-msg" class="feedback-success-card" hidden aria-live="polite">
+          <h3>🎉 Thank you for your feedback!</h3>
+          <p id="feedback-success-text">Your feedback has been successfully submitted. We appreciate your collaboration in improving the toolkit!</p>
+          <a href="index.html" class="btn btn-primary">Return to Dashboard</a>
+        </div>
+      </div>
+      <!-- Merged Utility Navigation Links -->
+      <div class="global-text-links-container">
+        <a href="index.html" id="link-back-dashboard" class="home-action-link">🏠 Toolkit Dashboard</a>
+        <a href="index.html#resources" id="link-to-resources" class="home-action-link">📚 Underpinning Theories & Resources</a>
+        <button id="btn-toggle-a11y" class="home-action-link a11y-toggle-link" aria-expanded="false" aria-controls="a11y-controls-panel">
+          ♿ Accessibility Settings
+        </button>
+      </div>
+
+      <!-- Collapsible Accessibility Settings Panel (Appears right under links row) -->
+      <div id="a11y-controls-panel" class="a11y-panel-collapsed" role="region" aria-label="Accessibility Settings" hidden>
+        <div class="a11y-toolbar-inner">
+          <div class="a11y-group">
+            <span class="a11y-label" id="font-size-label">Text Size:</span>
+            <button id="btn-size-dec" aria-describedby="font-size-label" aria-label="Decrease text size">A-</button>
+            <button id="btn-size-reset" aria-describedby="font-size-label" aria-label="Reset text size">Normal</button>
+            <button id="btn-size-inc" aria-describedby="font-size-label" aria-label="Increase text size">A+</button>
+          </div>
+
+          <div class="a11y-group">
+            <span class="a11y-label" id="theme-label">Theme:</span>
+            <button id="btn-theme-dark" aria-describedby="theme-label" aria-label="Dark theme">Dark</button>
+            <button id="btn-theme-light" class="active" aria-describedby="theme-label" aria-label="Light theme">Light</button>
+            <button id="btn-theme-hc" aria-describedby="theme-label" aria-label="High contrast theme">High Contrast</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p id="footer-credits"><strong>Safe to Stretch Toolkit</strong> is built on Universal Design for Learning (UDL) principles, David Rock's SCARF model, and Paulo Freire's critical pedagogy.</p>
+        <p id="footer-subtext">Dynamic content loaded from Markdown files. Want to submit feedback? Email us using the form above.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="feedback.js"></script>
+</body>
+</html>

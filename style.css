@@ -1,0 +1,911 @@
+/* ==========================================================================
+   SAFE TO STRETCH - CSS DESIGN SYSTEM & STYLESHEET (CLEANED & REFACTORED)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & Theme Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* System Typography */
+  --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Text Sizing Scales */
+  --text-base-ratio: 1;
+  --font-size-xs: calc(0.8125rem * var(--text-base-ratio));
+  --font-size-sm: calc(0.9375rem * var(--text-base-ratio));
+  --font-size-base: calc(1.0625rem * var(--text-base-ratio));
+  --font-size-lg: calc(1.1875rem * var(--text-base-ratio));
+  --font-size-xl: calc(1.3125rem * var(--text-base-ratio));
+  --font-size-2xl: calc(1.5rem * var(--text-base-ratio));
+  --font-size-3xl: calc(1.875rem * var(--text-base-ratio));
+  --font-size-4xl: calc(2.25rem * var(--text-base-ratio));
+  
+  --line-height-base: 1.65;
+  --letter-spacing-base: normal;
+  --word-spacing-base: normal;
+
+  /* Theme Defaults (Light Theme is default) */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-input: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --accent-teal: #0d9488;
+  --accent-teal-glow: rgba(13, 148, 136, 0.1);
+  --accent-coral: #e11d48;
+  --accent-coral-glow: rgba(225, 29, 72, 0.1);
+  --accent-blue: #2563eb;
+  --accent-blue-glow: rgba(37, 99, 235, 0.1);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shadow-main: 0 10px 25px -10px rgba(15, 23, 42, 0.08);
+  --backdrop-blur: blur(12px);
+  --focus-ring: 3px dashed #0d9488;
+  
+  /* Tap targets (A11y standard) */
+  --min-tap-target: 44px;
+  
+  /* Animation Defaults */
+  --transition-speed: 0.3s;
+  --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Variables */
+body.theme-dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --bg-input: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-teal: #14b8a6;
+  --accent-teal-glow: rgba(20, 184, 166, 0.15);
+  --accent-coral: #f43f5e;
+  --accent-coral-glow: rgba(244, 63, 94, 0.15);
+  --accent-blue: #3b82f6;
+  --accent-blue-glow: rgba(59, 130, 246, 0.15);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --focus-ring: 3px dashed #14b8a6;
+}
+
+/* High Contrast Theme Variables */
+body.theme-hc {
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-card: #000000;
+  --bg-input: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-muted: #ffffff;
+  --accent-teal: #ffff00; /* Yellow */
+  --accent-teal-glow: transparent;
+  --accent-coral: #ff00ff; /* Fuchsia */
+  --accent-coral-glow: transparent;
+  --accent-blue: #00ffff; /* Cyan */
+  --accent-blue-glow: transparent;
+  --border-color: #ffffff;
+  --shadow-main: none;
+  --backdrop-blur: none;
+  --focus-ring: 3px dashed #ffff00;
+}
+
+
+
+/* --------------------------------------------------------------------------
+   2. Global Resets & Base Styles
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  word-spacing: var(--word-spacing-base);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color var(--transition-speed) var(--transition-curve),
+              color var(--transition-speed) var(--transition-curve);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--accent-teal);
+  color: #000000;
+  padding: 10px 20px;
+  z-index: 10000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: top var(--transition-speed);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: var(--focus-ring);
+}
+
+/* Accessible Focus States */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible,
+a:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* Base button reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. Collapsible Accessibility Panel Layout
+   -------------------------------------------------------------------------- */
+
+.a11y-panel-collapsed {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+  width: 100%;
+  text-align: left;
+  box-shadow: var(--shadow-main);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  animation: slideDown 0.3s var(--transition-curve) forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.a11y-toolbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Stacked layout on mobile */
+  gap: 16px;
+  align-items: stretch;
+}
+
+.a11y-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Prevent overflow on small screens */
+  gap: 8px;
+}
+
+.a11y-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.a11y-group button {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  min-height: var(--min-tap-target); /* Touch footprint */
+  border-radius: 6px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a11y-group button:hover {
+  border-color: var(--accent-teal);
+  background-color: rgba(13, 148, 136, 0.05);
+}
+
+.a11y-group button.active, 
+.a11y-group button[aria-pressed="true"] {
+  background-color: var(--accent-teal);
+  color: #000000;
+  border-color: var(--accent-teal);
+  font-weight: bold;
+}
+
+
+
+/* Desktop override for panel layout */
+@media (min-width: 768px) {
+  .a11y-toolbar-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. App Layout Container
+   -------------------------------------------------------------------------- */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 12px;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 24px 16px;
+  }
+}
+
+/* Header Styling */
+.main-header {
+  margin-bottom: 24px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 1.15;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-light .brand h1 {
+  background: linear-gradient(135deg, #0f172a 30%, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-hc .brand h1 {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.tagline {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.hero-image-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-main);
+  border: 1px solid var(--border-color);
+  aspect-ratio: 16 / 9;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Desktop layout additions */
+@media (min-width: 768px) {
+  .main-header {
+    margin-bottom: 32px;
+  }
+  .header-content {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .brand h1 {
+    font-size: var(--font-size-4xl);
+  }
+  .tagline {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Tab Navigation (Swipable on mobile)
+   -------------------------------------------------------------------------- */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tab-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: all var(--transition-speed) var(--transition-curve);
+  min-height: var(--min-tap-target);
+  display: inline-flex;
+  align-items: center;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tab-btn.active {
+  color: var(--accent-teal);
+  border-bottom-color: var(--accent-teal);
+}
+
+@media (min-width: 768px) {
+  .tab-nav {
+    margin-bottom: 32px;
+    gap: 8px;
+  }
+  .tab-btn {
+    padding: 12px 24px;
+    font-size: var(--font-size-base);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. General Tab Panels & Common Components
+   -------------------------------------------------------------------------- */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards */
+.card {
+  background-color: var(--bg-card);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-main);
+  margin-bottom: 20px;
+}
+
+.section-header-card {
+  background: linear-gradient(135deg, var(--bg-secondary), rgba(30,41,59,0.3));
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.section-header-card h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.section-header-card p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .card, .section-header-card {
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .section-header-card h2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  min-height: var(--min-tap-target);
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-teal);
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background-color: #0ea5e9;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+}
+
+.theme-hc .btn-primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #ffff00;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-secondary);
+}
+
+/* Loading Spinner */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 0;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--accent-teal);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   7. Home Landing View Layout (Cards Grid)
+   -------------------------------------------------------------------------- */
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-welcome-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.module-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform var(--transition-speed) var(--transition-curve),
+              box-shadow var(--transition-speed) var(--transition-curve);
+  padding: 20px;
+  text-align: left;
+}
+
+.module-card h3 {
+  font-size: var(--font-size-base);
+}
+
+.module-card p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.card-badge {
+  align-self: flex-start;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.before-badge { background-color: var(--accent-coral-glow); color: var(--accent-coral); }
+.during-badge { background-color: var(--accent-blue-glow); color: var(--accent-blue); }
+.after-badge { background-color: var(--accent-teal-glow); color: var(--accent-teal); }
+
+.card-link {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--accent-teal);
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .home-layout {
+    gap: 32px;
+  }
+  .home-welcome-section {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+  #home-markdown-container {
+    flex: 6;
+  }
+  .home-welcome-section .hero-image-container {
+    flex: 4;
+  }
+  .home-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns on tablet/desktop */
+    gap: 20px;
+  }
+  .module-card {
+    padding: 24px;
+  }
+  .module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -10px rgba(20, 184, 166, 0.15);
+  }
+  .theme-light .module-card:hover {
+    box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.12);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Dynamic Accordions for Guideline Reading
+   -------------------------------------------------------------------------- */
+.accordion-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.accordion-layout > h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.accordion-layout > p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 800px;
+}
+
+@media (min-width: 768px) {
+  .accordion-layout > h1 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  overflow: hidden;
+  transition: border-color var(--transition-speed);
+}
+
+.accordion-item:hover {
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.accordion-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 16px 20px;
+  min-height: 52px; /* Touch-optimized trigger height */
+  background: none;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.accordion-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.accordion-trigger:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: -3px;
+  background-color: rgba(20, 184, 166, 0.05);
+}
+
+.accordion-icon {
+  font-size: 10px;
+  transition: transform var(--transition-speed) var(--transition-curve);
+  color: var(--accent-teal);
+  margin-left: 12px;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  padding: 0 16px 16px 16px;
+  border-top: 1px solid transparent;
+}
+
+.accordion-trigger[aria-expanded="true"] + .accordion-content {
+  border-top-color: var(--border-color);
+  animation: slideDown 0.3s var(--transition-curve) forwards;
+}
+
+/* Accordion internal typography */
+.accordion-content p {
+  margin: 12px 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.accordion-content ul,
+.accordion-content ol {
+  padding-left: 20px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  font-size: var(--font-size-sm);
+}
+
+.accordion-content li {
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+.accordion-content li strong {
+  color: var(--text-primary);
+}
+
+
+
+@media (min-width: 768px) {
+  .accordion-trigger {
+    font-size: var(--font-size-base);
+    padding: 18px 24px;
+  }
+  .accordion-content {
+    padding: 0 24px 24px 24px;
+  }
+  .accordion-content p, 
+  .accordion-content ul,
+  .accordion-content ol {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Home Text Action Links Styling
+   -------------------------------------------------------------------------- */
+.home-text-links-container,
+.global-text-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.home-action-link {
+  color: var(--accent-teal);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  min-height: var(--min-tap-target);
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.home-action-link:hover {
+  color: var(--text-primary);
+}
+
+.a11y-toggle-link {
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .home-text-links-container,
+  .global-text-links-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Dedicated Feedback Form layout (feedback.html specifics)
+   -------------------------------------------------------------------------- */
+.feedback-section {
+  border-top: 3px solid var(--accent-teal);
+}
+
+.feedback-header {
+  margin-bottom: 20px;
+}
+
+.feedback-header h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: 8px;
+}
+
+.feedback-header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.feedback-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  min-height: var(--min-tap-target);
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-teal);
+  outline: none;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.feedback-success-card {
+  background-color: var(--accent-teal-glow);
+  border: 1px solid var(--accent-teal);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.feedback-success-card h3 {
+  color: var(--accent-teal);
+  font-size: var(--font-size-lg);
+}
+
+@media (min-width: 768px) {
+  .feedback-header h2 {
+    font-size: var(--font-size-2xl);
+  }
+  .feedback-form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .form-group.full-width {
+    grid-column: span 2;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer Section
+   -------------------------------------------------------------------------- */
+.main-footer {
+  margin-top: 24px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .main-footer {
+    margin-top: 32px;
+    padding-top: 32px;
+  }
+}

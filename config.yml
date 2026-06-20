@@ -1,0 +1,41 @@
+# Safe to Stretch - Global UI Configuration File
+# Edit the text strings below to customize site titles, navigation buttons, and links.
+
+navigation:
+  home: "🏠 Home"
+  before: "🛑 Before"
+  during: "📢 During"
+  after: "🔄 After"
+
+links:
+  resources: "📚 Underpinning Theories & Resources"
+  feedback: "💡 Suggest Additions & Feedback Form"
+  back_to_dashboard: "🏠 Toolkit Dashboard"
+  back_button: "← Back to Toolkit Dashboard"
+  a11y_settings: "♿ Accessibility Settings"
+
+footer:
+  credits: "<strong>Safe to Stretch Toolkit</strong> is built on Universal Design for Learning (UDL) principles, David Rock's SCARF model, and Paulo Freire's critical pedagogy."
+  subtext: "Dynamic content loaded from Markdown files. Want to submit feedback? Email us using the form above."
+
+cards:
+  explore_text: "Explore Guidelines"
+  before:
+    badge: "Phase 1"
+    title: "🛑 Before"
+    description: "Design and prepare session parameters. Map cohort reporting lines, analyze content risk, review facilitator triggers, and configure digital options."
+  during:
+    badge: "Phase 2"
+    title: "📢 During"
+    description: "Run your live session with flat status hierarchies. Co-create a Community Compact, set silent brainstorming timers, and manage airtime fairly."
+  after:
+    badge: "Phase 3"
+    title: "🔄 After"
+    description: "Review metrics and iterate design blueprints. Analyze participation splits, measure lived safety anonymously, and care for anxiety hangovers."
+
+# Feedback Target Settings
+# To receive feedback directly in your inbox, generate a free access key at https://web3forms.com
+# and paste it into the access_key field below.
+feedback:
+  access_key: "YOUR_ACCESS_KEY_HERE"
+

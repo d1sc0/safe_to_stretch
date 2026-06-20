@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe to Stretch - Workplace Power Dynamics Toolkit</title>
+  <meta name="description" content="An interactive Before, During, and After Toolkit for flattening workplace power dynamics in learning design, applying UDL principles.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Marked.js for parsing Markdown client-side -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- JS-YAML for parsing YAML config client-side -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+</head>
+<body class="theme-light">
+
+  <!-- Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="header-content">
+        <div class="brand">
+          <h1>Safe to Stretch</h1>
+          <p class="tagline">Flattening Workplace Power Dynamics in Learning & Facilitation</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-nav" aria-label="Toolkit Sections" role="tablist">
+      <button class="tab-btn active" role="tab" id="tab-home" aria-selected="true" aria-controls="panel-home" tabindex="0">
+        🏠 Home
+      </button>
+      <button class="tab-btn" role="tab" id="tab-before" aria-selected="false" aria-controls="panel-before" tabindex="-1">
+        🛑 Before
+      </button>
+      <button class="tab-btn" role="tab" id="tab-during" aria-selected="false" aria-controls="panel-during" tabindex="-1">
+        📢 During
+      </button>
+      <button class="tab-btn" role="tab" id="tab-after" aria-selected="false" aria-controls="panel-after" tabindex="-1">
+        🔄 After
+      </button>
+    </nav>
+
+    <!-- Main Content Panels -->
+    <main id="main-content">
+      
+      <!-- Panel 0: Home Overview -->
+      <section id="panel-home" class="tab-panel active" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
+        <div class="home-layout">
+          
+          <!-- Welcome Section (Flex row on desktop) -->
+          <div class="home-welcome-section">
+            <!-- Overview text loaded from home.md -->
+            <article class="markdown-body" id="home-markdown-container">
+              <div class="spinner-container">
+                <div class="spinner" role="progressbar" aria-label="Loading landing page"></div>
+                <p>Fetching overview content...</p>
+              </div>
+            </article>
+
+            <!-- Hero Image (Only displayed on the homepage under navigation) -->
+            <div class="hero-image-container">
+              <img src="assets/hero.jpg" alt="A diverse group of professional team members collaborating equally around a modern circular table, with ideas floating in teal and coral gradients above them, representing psychological safety." class="hero-img">
+            </div>
+          </div>
+
+          <!-- Action Cards linking to modules -->
+          <div class="home-grid">
+            <button class="card module-card clickable-card" id="card-before" data-target="tab-before" aria-label="Explore Before guidelines">
+              <div class="card-badge before-badge" id="card-before-badge">Phase 1</div>
+              <h3 id="card-before-title">🛑 Before</h3>
+              <p id="card-before-desc">Design and prepare session parameters. Map cohort reporting lines, analyze content risk, review facilitator triggers, and configure digital options.</p>
+              <span class="card-link" id="card-before-link" aria-hidden="true">Explore Guidelines &rarr;</span>
+            </button>
+            
+            <button class="card module-card clickable-card" id="card-during" data-target="tab-during" aria-label="Explore During guidelines">
+              <div class="card-badge during-badge" id="card-during-badge">Phase 2</div>
+              <h3 id="card-during-title">📢 During</h3>
+              <p id="card-during-desc">Run your live session with flat status hierarchies. Co-create a Community Compact, set silent brainstorming timers, and manage airtime fairly.</p>
+              <span class="card-link" id="card-during-link" aria-hidden="true">Explore Guidelines &rarr;</span>
+            </button>
+
+            <button class="card module-card clickable-card" id="card-after" data-target="tab-after" aria-label="Explore After guidelines">
+              <div class="card-badge after-badge" id="card-after-badge">Phase 3</div>
+              <h3 id="card-after-title">🔄 After</h3>
+              <p id="card-after-desc">Review metrics and iterate design blueprints. Analyze participation splits, measure lived safety anonymously, and care for anxiety hangovers.</p>
+              <span class="card-link" id="card-after-link" aria-hidden="true">Explore Guidelines &rarr;</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Panel 1: Before Session -->
+      <section id="panel-before" class="tab-panel" role="tabpanel" aria-labelledby="tab-before" tabindex="0" hidden>
+        <div class="accordion-layout" id="before-markdown-container">
+          <!-- Dynamic accordions loaded from before.md -->
+        </div>
+      </section>
+
+      <!-- Panel 2: During Session -->
+      <section id="panel-during" class="tab-panel" role="tabpanel" aria-labelledby="tab-during" tabindex="0" hidden>
+        <div class="accordion-layout" id="during-markdown-container">
+          <!-- Dynamic accordions loaded from during.md -->
+        </div>
+      </section>
+
+      <!-- Panel 3: After Session -->
+      <section id="panel-after" class="tab-panel" role="tabpanel" aria-labelledby="tab-after" tabindex="0" hidden>
+        <div class="accordion-layout" id="after-markdown-container">
+          <!-- Dynamic accordions loaded from after.md -->
+        </div>
+      </section>
+
+      <!-- Panel 4: Resources & Theories -->
+      <section id="panel-resources" class="tab-panel" role="tabpanel" aria-label="Underpinning Theories & Resources" tabindex="0" hidden>
+        <div class="section-header-card">
+          <h2>📚 Underpinning Theories & Resources</h2>
+          <p>Ground your facilitation techniques in established educational research, cognitive frameworks, and critical pedagogical works.</p>
+        </div>
+        <div class="accordion-layout" id="resources-markdown-container">
+          <!-- Dynamic accordions loaded from resources.md -->
+        </div>
+      </section>
+      <!-- Merged Utility Navigation Links -->
+      <div class="global-text-links-container">
+        <a href="#resources" id="link-to-resources" class="home-action-link">📚 Underpinning Theories & Resources</a>
+        <a href="feedback.html" id="link-to-feedback" class="home-action-link">💡 Suggest Additions & Feedback Form</a>
+        <button id="btn-toggle-a11y" class="home-action-link a11y-toggle-link" aria-expanded="false" aria-controls="a11y-controls-panel">
+          ♿ Accessibility Settings
+        </button>
+      </div>
+
+      <!-- Collapsible Accessibility Settings Panel (Appears right under links row) -->
+      <div id="a11y-controls-panel" class="a11y-panel-collapsed" role="region" aria-label="Accessibility Settings" hidden>
+        <div class="a11y-toolbar-inner">
+          <div class="a11y-group">
+            <span class="a11y-label" id="font-size-label">Text Size:</span>
+            <button id="btn-size-dec" aria-describedby="font-size-label" aria-label="Decrease text size">A-</button>
+            <button id="btn-size-reset" aria-describedby="font-size-label" aria-label="Reset text size">Normal</button>
+            <button id="btn-size-inc" aria-describedby="font-size-label" aria-label="Increase text size">A+</button>
+          </div>
+
+          <div class="a11y-group">
+            <span class="a11y-label" id="theme-label">Theme:</span>
+            <button id="btn-theme-dark" aria-describedby="theme-label" aria-label="Dark theme">Dark</button>
+            <button id="btn-theme-light" class="active" aria-describedby="theme-label" aria-label="Light theme">Light</button>
+            <button id="btn-theme-hc" aria-describedby="theme-label" aria-label="High contrast theme">High Contrast</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p id="footer-credits"><strong>Safe to Stretch Toolkit</strong> is built on Universal Design for Learning (UDL) principles, David Rock's SCARF model, and Paulo Freire's critical pedagogy.</p>
+        <p id="footer-subtext">Dynamic content loaded from Markdown files. Want to submit feedback? Email us using the form above.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
