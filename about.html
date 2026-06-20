@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback - Safe to Stretch Toolkit</title>
-  <meta name="description" content="Submit feedback or suggest additions to the Safe to Stretch Facilitator Toolkit.">
+  <title>About - Safe to Stretch Toolkit</title>
+  <meta name="description" content="Learn about the design principles, UDL guidelines, and psychological safety frameworks underpinning the Safe to Stretch toolkit.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,9 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Marked.js for parsing Markdown client-side -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <!-- JS-YAML for parsing YAML config client-side -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </head>
@@ -36,62 +39,27 @@
       <a href="index.html" id="btn-back-dashboard" class="btn btn-secondary" aria-label="Go back to the main toolkit dashboard">&larr; Back to Toolkit Dashboard</a>
     </div>
 
-    <!-- Main Content Form -->
+    <!-- Main Content Container -->
     <main id="main-content">
-      <div class="card feedback-section">
-        <div class="feedback-header">
-          <h2>💡 Suggest Additions or Give Feedback</h2>
-          <p>Are you using this tool in your workshops? Have ideas to improve accessibility, flatten power structures, or expand content? We would love to hear from you!</p>
-        </div>
-
-        <form id="form-feedback" class="feedback-form-grid">
-          <!-- Honeypot Spam Protection -->
-          <input type="checkbox" name="botcheck" id="botcheck" style="display: none;">
-
-          <div class="form-group">
-            <label for="feedback-name">Your Name</label>
-            <input type="text" id="feedback-name" placeholder="e.g. Sarah Jenkins" required>
+      <div class="card">
+        <article class="markdown-body" id="about-markdown-container">
+          <div class="spinner-container">
+            <div class="spinner" role="progressbar" aria-label="Loading about content"></div>
+            <p>Fetching about content...</p>
           </div>
-          <div class="form-group">
-            <label for="feedback-email">Your Email Address</label>
-            <input type="email" id="feedback-email" placeholder="e.g. sarah@learningdesign.com" required>
-          </div>
-          <div class="form-group full-width">
-            <label for="feedback-type">Feedback Type</label>
-            <select id="feedback-type" required>
-              <option value="" disabled selected>Select a category...</option>
-              <option value="Suggestion">General Suggestion</option>
-              <option value="Addition">Content Addition/Resource Proposal</option>
-              <option value="Bug">Bug or Display Issue</option>
-              <option value="A11y">Accessibility Feedback</option>
-              <option value="Share">Sharing a facilitation story</option>
-            </select>
-          </div>
-          <div class="form-group full-width">
-            <label for="feedback-message">Message / Suggestion</label>
-            <textarea id="feedback-message" rows="5" placeholder="Share details of your experience, specific additions to the toolkit, or questions here..." required></textarea>
-          </div>
-          <div class="form-actions full-width">
-            <button type="submit" class="btn btn-primary" id="btn-submit-feedback">✉️ Submit Feedback</button>
-          </div>
-        </form>
-        
-        <div id="feedback-success-msg" class="feedback-success-card" hidden aria-live="polite">
-          <h3>🎉 Thank you for your feedback!</h3>
-          <p id="feedback-success-text">Your feedback has been successfully submitted. We appreciate your collaboration in improving the toolkit!</p>
-          <a href="index.html" class="btn btn-primary">Return to Dashboard</a>
-        </div>
+        </article>
       </div>
+
       <!-- Merged Utility Navigation Links -->
       <div class="global-text-links-container">
         <a href="index.html" id="link-back-dashboard" class="home-action-link">🏠 Toolkit Dashboard</a>
-        <a href="index.html#resources" id="link-to-resources" class="home-action-link">📚 Underpinning Theories & Resources</a>
+        <a href="feedback.html" id="link-to-feedback" class="home-action-link">💡 Suggest Additions & Feedback Form</a>
         <button id="btn-toggle-a11y" class="home-action-link a11y-toggle-link" aria-expanded="false" aria-controls="a11y-controls-panel">
           ♿ Accessibility Settings
         </button>
       </div>
 
-      <!-- Collapsible Accessibility Settings Panel (Appears right under links row) -->
+      <!-- Collapsible Accessibility Settings Panel -->
       <div id="a11y-controls-panel" class="a11y-panel-collapsed" role="region" aria-label="Accessibility Settings" hidden>
         <div class="a11y-toolbar-inner">
           <div class="a11y-group">
@@ -109,7 +77,6 @@
           </div>
         </div>
       </div>
-
     </main>
 
     <!-- Footer -->
@@ -120,6 +87,6 @@
     </footer>
   </div>
 
-  <script src="feedback.js"></script>
+  <script src="about.js"></script>
 </body>
 </html>

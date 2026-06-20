@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Load and apply YAML Configuration
   function loadConfig() {
-    fetch('config.yml')
+    fetch('config.yml', { cache: 'no-cache' })
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.text();
@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyConfig(config) {
+    // Brand Identity Header
+    if (config.brand) {
+      const brandTitle = document.getElementById('brand-title');
+      const brandTagline = document.getElementById('brand-tagline');
+      
+      if (brandTitle && config.brand.title) brandTitle.textContent = config.brand.title;
+      if (brandTagline && config.brand.tagline) brandTagline.textContent = config.brand.tagline;
+    }
+
     // Navigation Tabs
     if (config.navigation) {
       const tabHome = document.getElementById('tab-home');
@@ -47,14 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnToggleA11y && config.links.a11y_settings) btnToggleA11y.textContent = config.links.a11y_settings;
     }
 
-    // Footer
-    if (config.footer) {
-      const footerCredits = document.getElementById('footer-credits');
-      const footerSubtext = document.getElementById('footer-subtext');
-      
-      if (footerCredits && config.footer.credits) footerCredits.innerHTML = config.footer.credits;
-      if (footerSubtext && config.footer.subtext) footerSubtext.textContent = config.footer.subtext;
-    }
 
     // Action Cards on Homepage
     if (config.cards) {
@@ -62,13 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
       phases.forEach(phase => {
         const cardData = config.cards[phase];
         if (cardData) {
-          const badge = document.getElementById(`card-${phase}-badge`);
           const title = document.getElementById(`card-${phase}-title`);
           const desc = document.getElementById(`card-${phase}-desc`);
           const link = document.getElementById(`card-${phase}-link`);
           const cardBtn = document.getElementById(`card-${phase}`);
           
-          if (badge && cardData.badge) badge.textContent = cardData.badge;
           if (title && cardData.title) title.textContent = cardData.title;
           if (desc && cardData.description) desc.textContent = cardData.description;
           
@@ -344,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   pageFiles.forEach(page => {
-    fetch(page.file)
+    fetch(page.file, { cache: 'no-cache' })
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.text();

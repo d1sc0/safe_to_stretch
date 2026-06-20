@@ -1,6 +1,10 @@
 # Safe to Stretch - Global UI Configuration File
 # Edit the text strings below to customize site titles, navigation buttons, and links.
 
+brand:
+  title: 'Safe to Stretch'
+  tagline: 'A toolkit for considering workplace power dynamics in learning & facilitation'
+
 navigation:
   home: '🏠 Home'
   before: '🛑 Before'
@@ -9,29 +13,22 @@ navigation:
 
 links:
   resources: '📚 Additional Resources'
-  feedback: '💡 Give Feedback & Suggest Content'
+  feedback: '💡 Contribute and Give Feedback'
   back_to_dashboard: '🏠 Toolkit Dashboard'
   back_button: '← Back to Toolkit Dashboard'
   a11y_settings: '♿ Accessibility Settings'
 
-footer:
-  credits: "<strong>Safe to Stretch Toolkit</strong> is built on Universal Design for Learning (UDL) principles, David Rock's SCARF model, and Paulo Freire's critical pedagogy."
-  subtext: 'Dynamic content loaded from Markdown files. Want to submit feedback? Email us using the form above.'
-
 cards:
-  explore_text: 'Explore Guidelines'
+  explore_text: 'Explore'
   before:
-    badge: 'Phase 1'
     title: '🛑 Before'
-    description: 'Design and prepare session parameters. Map cohort reporting lines, analyze content risk, review facilitator triggers, and configure digital options.'
+    description: 'Design and prepare your sessions. Anticipate and mitigate problems, analyse content risk, review facilitator triggers.'
   during:
-    badge: 'Phase 2'
     title: '📢 During'
-    description: 'Run your live session with flat status hierarchies. Co-create a Community Compact, set silent brainstorming timers, and manage airtime fairly.'
+    description: 'Run your live session with flat status hierarchies. Co-create session roles, manage airtime fairly, consider anonymity'
   after:
-    badge: 'Phase 3'
     title: '🔄 After'
-    description: 'Review metrics and iterate design blueprints. Analyze participation splits, measure lived safety anonymously, and care for anxiety hangovers.'
+    description: 'Review successes and failures. Analyze participation splits, analyse feedback and iterate your sessions design.'
 
 # Feedback Target Settings
 # To receive feedback directly in your inbox, generate a free access key at https://web3forms.com

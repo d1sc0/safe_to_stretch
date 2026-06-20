@@ -569,19 +569,7 @@ button {
   color: var(--text-secondary);
 }
 
-.card-badge {
-  align-self: flex-start;
-  font-size: 8px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
 
-.before-badge { background-color: var(--accent-coral-glow); color: var(--accent-coral); }
-.during-badge { background-color: var(--accent-blue-glow); color: var(--accent-blue); }
-.after-badge { background-color: var(--accent-teal-glow); color: var(--accent-teal); }
 
 .card-link {
   font-size: var(--font-size-sm);
@@ -711,27 +699,50 @@ button {
   animation: slideDown 0.3s var(--transition-curve) forwards;
 }
 
-/* Accordion internal typography */
+/* Accordion & Markdown internal typography */
+.markdown-body p,
 .accordion-content p {
-  margin: 12px 0;
+  margin-top: 0;
+  margin-bottom: 18px;
   color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.markdown-body p {
+  font-size: var(--font-size-base);
+}
+
+.accordion-content p {
   font-size: var(--font-size-sm);
+}
+
+.markdown-body ul,
+.markdown-body ol,
+.accordion-content ul,
+.accordion-content ol {
+  padding-left: 20px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  font-size: var(--font-size-base);
 }
 
 .accordion-content ul,
 .accordion-content ol {
-  padding-left: 20px;
-  margin-top: 16px;
-  margin-bottom: 12px;
   font-size: var(--font-size-sm);
 }
 
-.accordion-content li {
+.accordion-content li,
+.markdown-body li {
   margin-bottom: 8px;
   color: var(--text-secondary);
 }
 
-.accordion-content li strong {
+.accordion-content li strong,
+.markdown-body li strong {
   color: var(--text-primary);
 }
 

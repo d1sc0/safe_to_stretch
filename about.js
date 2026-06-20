@@ -1,14 +1,9 @@
 /* ==========================================================================
-   SAFE TO STRETCH - FEEDBACK PAGE JS
+   SAFE TO STRETCH - ABOUT PAGE JS
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  // Default feedback settings
-  let feedbackConfig = {
-    access_key: 'YOUR_ACCESS_KEY_HERE'
-  };
-
   // Load and apply YAML Configuration
   function loadConfig() {
     fetch('config.yml', { cache: 'no-cache' })
@@ -40,19 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (config.links) {
       const btnBackDashboard = document.getElementById('btn-back-dashboard');
       const linkBackDashboard = document.getElementById('link-back-dashboard');
-      const linkResources = document.getElementById('link-to-resources');
+      const linkFeedback = document.getElementById('link-to-feedback');
       const btnToggleA11y = document.getElementById('btn-toggle-a11y');
       
       if (btnBackDashboard && config.links.back_button) btnBackDashboard.textContent = config.links.back_button;
       if (linkBackDashboard && config.links.back_to_dashboard) linkBackDashboard.textContent = config.links.back_to_dashboard;
-      if (linkResources && config.links.resources) linkResources.textContent = config.links.resources;
+      if (linkFeedback && config.links.feedback) linkFeedback.textContent = config.links.feedback;
       if (btnToggleA11y && config.links.a11y_settings) btnToggleA11y.textContent = config.links.a11y_settings;
-    }
-
-
-    // Override target Web3Forms access key dynamically from config
-    if (config.feedback && config.feedback.access_key) {
-      feedbackConfig.access_key = config.feedback.access_key;
     }
   }
 
@@ -82,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTextScale();
   }
 
-  const savedTheme = localStorage.getItem('s2s-theme') || 'light'; // Default is light now
+  const savedTheme = localStorage.getItem('s2s-theme') || 'light';
   applyTheme(savedTheme);
 
   // Text Sizing Listeners
@@ -110,8 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('s2s-text-scale', textScale);
     announceToScreenReader(`Text size adjusted to ${Math.round(textScale * 100)}%`);
   }
-
-
 
   // Theme Selectors
   btnThemeDark.addEventListener('click', () => applyTheme('dark'));
@@ -178,92 +165,33 @@ document.addEventListener('DOMContentLoaded', () => {
     announceToScreenReader(`Accessibility settings ${!isExpanded ? 'opened' : 'closed'}`);
   });
 
-
-
   // ------------------------------------------------------------------------
-  // 3. Feedback Form AJAX Submission via Web3Forms API
+  // 2. Fetch and Render about.md Content
   // ------------------------------------------------------------------------
-  const formFeedback = document.getElementById('form-feedback');
-  const feedbackSuccessMsg = document.getElementById('feedback-success-msg');
-  const btnSubmitFeedback = document.getElementById('btn-submit-feedback');
+  function loadAboutContent() {
+    const container = document.getElementById('about-markdown-container');
+    if (!container || typeof marked === 'undefined') return;
 
-  formFeedback?.addEventListener('submit', (e) => {
-    e.preventDefault();
+    fetch('./content/about.md', { cache: 'no-cache' })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.text();
+      })
+      .then(markdown => {
+        marked.setOptions({ gfm: true, breaks: true, headerIds: true, mangle: false });
+        container.innerHTML = marked.parse(markdown);
+      })
+      .catch(err => {
+        console.error('Failed to load about.md:', err);
+        container.innerHTML = `
+          <div class="card" style="border-color: var(--accent-coral); background-color: var(--accent-coral-glow); padding: 16px;">
+            <h4>Error loading about content</h4>
+            <p>Could not fetch <code>./content/about.md</code>.</p>
+          </div>
+        `;
+      });
+  }
 
-    // Verify that a valid Web3Forms access key (UUID) is configured
-    const key = (feedbackConfig.access_key || '').trim();
-    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-    
-    if (key === 'YOUR_ACCESS_KEY_HERE' || !uuidRegex.test(key)) {
-      alert('Configuration Action Required:\n\nTo enable feedback submissions, please generate a free Access Key at https://web3forms.com and copy it into your config.yml file under feedback.access_key.');
-      return;
-    }
-
-    // Honeypot spam check
-    const botcheck = document.getElementById('botcheck');
-    if (botcheck && botcheck.checked) {
-      console.warn('Botcheck triggered. Submission aborted.');
-      return;
-    }
-
-    const name = document.getElementById('feedback-name').value.trim();
-    const email = document.getElementById('feedback-email').value.trim();
-    const type = document.getElementById('feedback-type').value;
-    const message = document.getElementById('feedback-message').value.trim();
-
-    const subject = `[Safe to Stretch Feedback] - ${type} from ${name}`;
-
-    // Disable submit button and show loading state
-    if (btnSubmitFeedback) {
-      btnSubmitFeedback.disabled = true;
-      btnSubmitFeedback.textContent = '⏱️ Sending Suggestion...';
-    }
-
-    // Prepare JSON payload
-    const payload = {
-      access_key: feedbackConfig.access_key,
-      name: name,
-      email: email,
-      subject: subject,
-      message: message,
-      from_name: 'Safe to Stretch Facilitator Toolkit'
-    };
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    })
-    .then(async (res) => {
-      let json = {};
-      try {
-        json = await res.json();
-      } catch (err) {}
-      
-      if (res.status === 200 && json.success) {
-        // Show success card and hide form
-        formFeedback.style.display = 'none';
-        if (feedbackSuccessMsg) {
-          feedbackSuccessMsg.hidden = false;
-        }
-        announceToScreenReader('Feedback successfully submitted. Thank you!');
-      } else {
-        throw new Error(json.message || 'Server error occurred during submission.');
-      }
-    })
-    .catch((err) => {
-      console.error('Submission failed:', err);
-      alert(`Oops! Something went wrong: ${err.message || 'Could not submit suggestion.'}\n\nPlease check your internet connection or verify your config.yml Web3Forms Access Key.`);
-      
-      // Re-enable button
-      if (btnSubmitFeedback) {
-        btnSubmitFeedback.disabled = false;
-        btnSubmitFeedback.textContent = '✉️ Submit Feedback';
-      }
-    });
-  });
+  loadAboutContent();
 
 });

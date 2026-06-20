@@ -12,10 +12,11 @@ The toolkit runs entirely client-side, making it easy to host on static platform
 
 *   **`index.html`**: Main frame containing the brand header, home panel hero banner, navigation tabs, active tab panels, and the global footer.
 *   **`style.css`**: Unified design system defining CSS custom variables for themes, text scaling ratios, responsive cards, dynamic accordions, and footer layout links.
-*   **`config.yml`**: Central YAML file configuring UI text strings (tab navigation, links, back buttons, footer descriptions, homepage cards, and accessibility settings button labels).
+*   **`config.yml`**: Central YAML file configuring UI text strings (tab navigation, links, back buttons, homepage cards, and accessibility settings button labels).
 *   **`app.js`**: Core engine loading tab selections, dynamic markdown fetches, markdown-to-accordion DOM generation, local storage scales, page layouts, and client-side YAML configuration mapping.
-*   **`feedback.html` / `feedback.js`**: Standalone feedback page integrating the contact mailto form, visual themes, and local storage size scaling.
-*   **`content/`**: Folder containing modular Markdown contents (`home.md`, `before.md`, `during.md`, `after.md`, `resources.md`).
+*   **`feedback.html` / `feedback.js`**: Standalone feedback page integrating the Web3Forms AJAX submission, visual themes, and local storage size scaling.
+*   **`about.html` / `about.js`**: Standalone about page rendering the project's background info, foundational frameworks, visual themes, and local storage size scaling.
+*   **`content/`**: Folder containing modular Markdown contents (`home.md`, `before.md`, `during.md`, `after.md`, `resources.md`, `about.md`).
 
 ---
 
@@ -32,11 +33,12 @@ To keep content maintainable:
 
 To support easy labels customization without editing project source code:
 *   A browser-compatible library `js-yaml` loads via CDN.
-*   Upon launch, the script retrieves `config.yml` and updates all configured headers, links, footer paragraphs, and Home page action cards inside the DOM.
+*   Upon launch, the script retrieves `config.yml` and updates all configured brand headers (title, tagline), links, navigation buttons, and Home page action cards inside the DOM.
 *   **Unified Global Footer Links**: To prevent screen clutter, the *Underpinning Theories & Resources* link, the *Suggest Additions & Feedback Form* link, and the *Accessibility Settings* toggle button are merged into a single horizontal links row (`.global-text-links-container`) inside the footer, visible on all pages. 
 *   **Inline Settings Toggle**: Clicking the inline "♿ Accessibility Settings" text link smoothly expands the text sizing and theme contrast controls inside a collapsible card directly underneath the navigation link row.
 *   **Hash-Based SPA Routing & History**: Integrated dynamic URL hash mapping (`/#before`, `/#during`, `/#after`, `/#resources`) in `app.js` which syncs as users click tabs or card elements. This makes every sub-panel bookmarkable directly on static hosts like GitHub Pages, and enables browser back/forward navigation.
 *   **Asynchronous Web3Forms Submission**: Configured a `feedback` options block in `config.yml` to specify a Web3Forms public Access Key (`access_key: "YOUR_ACCESS_KEY_HERE"`). On form submit, JavaScript performs an asynchronous `POST` request to Web3Forms' API. This validates honeypots, handles loading states natively, and triggers email notifications without page redirects or exposing private tokens.
+*   **Static Simple Footer**: Replaced dynamic footer configuration parameters with a static footer text (`Safe to Stretch Toolkit - About`) containing a direct hyperlink to the new About page for cleaner navigation.
 *   HTML hardcoded layout defaults serve as reliable fallback strings if config files fail to fetch.
 
 ---
@@ -47,5 +49,6 @@ To prepare the repository for final deployment to GitHub Pages, the following co
 *   **CSS Cleanup**: Removed unused classes (such as `.a11y-footer-wrapper`) to reduce visual weight and improve loading time.
 *   **Focus Ring Accessibility**: Replaced standard solid outlines with highly visible custom dashed outlines (`--focus-ring: 3px dashed var(--accent-teal)`) for keyboard users across light, dark, and high contrast themes. This aligns directly with strict accessibility requirements.
 *   **Form Input Enhancements**: Added discrete `:focus-visible` styles to text fields, checkboxes, select lists, and textareas, maintaining native styling for mouse users but giving keyboard focus clear visual styling.
+*   **Cache Prevention (`no-cache`)**: Added `{ cache: 'no-cache' }` configurations to all AJAX requests for Markdown assets and configuration files, forcing the browser to revalidate updates instantly without displaying stale cached pages.
 *   **Layout & Spacing Calibration**: Resolved border collisions and removed redundant containers/margins to create a seamless aesthetic flow above the footer borders.
 
