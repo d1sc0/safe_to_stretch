@@ -1,5 +1,7 @@
 # Project Plan: Safe to Stretch Toolkit Web App
 
+**Live Site**: [https://d1sc0.github.io/safe_to_stretch/](https://d1sc0.github.io/safe_to_stretch/)
+
 The **Safe to Stretch** toolkit is a lightweight, responsive, mobile-first static web application designed to help facilitators and learning designers proactively flatten workplace power dynamics before, during, and after training sessions. 
 
 ---

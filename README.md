@@ -89,4 +89,4 @@ Since the app consists of flat static files, deploying takes seconds:
 2. Navigate to your repository **Settings** > **Pages**.
 3. Under **Build and deployment**, set the Source to **Deploy from a branch**.
 4. Select the **main** branch and root `/` directory, then click **Save**.
-5. The site will be live at `https://YOUR_USERNAME.github.io/safe-to-stretch/` within minutes.
+5. The site is live at: **[https://d1sc0.github.io/safe_to_stretch/](https://d1sc0.github.io/safe_to_stretch/)**
