@@ -189,6 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
   formFeedback?.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // Verify that a valid Web3Forms access key (UUID) is configured
+    const key = (feedbackConfig.access_key || '').trim();
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    
+    if (key === 'YOUR_ACCESS_KEY_HERE' || !uuidRegex.test(key)) {
+      alert('Configuration Action Required:\n\nTo enable feedback submissions, please generate a free Access Key at https://web3forms.com and copy it into your config.yml file under feedback.access_key.');
+      return;
+    }
+
     // Honeypot spam check
     const botcheck = document.getElementById('botcheck');
     if (botcheck && botcheck.checked) {
