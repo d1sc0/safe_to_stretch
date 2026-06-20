@@ -103,6 +103,10 @@ body.theme-hc {
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
