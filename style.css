@@ -155,6 +155,16 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+/* Prevent focus outlines on container panels and static headers when programmatically focused */
+.tab-panel:focus,
+.tab-panel:focus-visible,
+.tab-panel h2:focus,
+.tab-panel h2:focus-visible,
+h2[tabindex="-1"]:focus,
+h2[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
 /* Base button reset */
 button {
   cursor: pointer;
@@ -551,11 +561,11 @@ button {
 }
 
 .module-card h3 {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
 }
 
 .module-card p {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--text-secondary);
 }
 
@@ -574,7 +584,7 @@ button {
 .after-badge { background-color: var(--accent-teal-glow); color: var(--accent-teal); }
 
 .card-link {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--accent-teal);
   margin-top: auto;

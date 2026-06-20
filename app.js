@@ -280,14 +280,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Handle hash state updates
-    if (panelId === 'panel-resources') {
-      if (window.location.hash !== '#resources') {
-        history.pushState(null, null, '#resources');
-      }
-    } else {
-      if (window.location.hash === '#resources') {
-        history.pushState(null, null, ' ');
+    // Handle hash state updates for all panels dynamically
+    const panelHashMap = {
+      'panel-home': '',
+      'panel-before': '#before',
+      'panel-during': '#during',
+      'panel-after': '#after',
+      'panel-resources': '#resources'
+    };
+    const targetHash = panelHashMap[panelId] !== undefined ? panelHashMap[panelId] : '';
+    
+    if (window.location.hash !== targetHash) {
+      if (targetHash === '') {
+        // Clear hash cleanly from URL bar without adding duplicate history stack
+        history.pushState(null, null, window.location.pathname + window.location.search);
+      } else {
+        history.pushState(null, null, targetHash);
       }
     }
   }
@@ -310,14 +318,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hash === '#resources') {
       switchTabDirectly('panel-resources');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (hash === '#home') {
-      switchTabDirectly('panel-home');
     } else if (hash === '#before') {
       switchTabDirectly('panel-before');
     } else if (hash === '#during') {
       switchTabDirectly('panel-during');
     } else if (hash === '#after') {
       switchTabDirectly('panel-after');
+    } else {
+      // Default fallback (e.g. empty hash or #home)
+      switchTabDirectly('panel-home');
     }
   }
 
