@@ -1,21 +1,13 @@
 # About the Safe to Stretch Toolkit
 
-Workplace learning environments should be spaces where professionals can safely test new ideas, fail, and collaborate without fear of judgment. However, corporate power structures and rank hierarchies often stifle this process: junior employees may hide knowledge gaps to protect their standing, while senior leaders may hold back to maintain their authority.
+This toolkit was made by [Stuart Mackenzie](https://hellostu.xyz) as part of an assignment on his PGcert as part of the masters programme in Creative Teaching and Learning Design at Arts University Bournemouth
 
-The **Safe to Stretch** toolkit was created to address this challenge by providing facilitators, designers, and team leads with actionable prompts and design tools to flat-status training rooms before, during, and after a session.
+Much of the content and ideas here are pulled together or inspired from a variety of sources. Many of which will be listed on the [resources page](#resources).
 
----
-
-## Foundational Frameworks
-
-Our content and design guidelines are grounded in three established educational and cognitive frameworks:
-
-- **Universal Design for Learning (UDL)**: Ensuring multiple options for representation, action, and expression to support diverse processing and participation styles.
-- **David Rock's SCARF Model**: Understanding how design choices can trigger default threat responses in a learner's brain by challenging their Status, Certainty, Autonomy, Relatedness, or Fairness.
-- **Paulo Freire's Critical Pedagogy**: Dismantling passive "banking concept" education models to foster active, participatory dialogue.
+I'll test this toolkit with other people over coming weeks (alongside the work being assessed) and if it feedback is positive I may move it to a more permanent home on the internet where it can more easily found. If you're interested in contributing please get in [touch](/feedback.html).
 
 ---
 
-## Zero-Dependency Architecture
+## Site build
 
-This site runs entirely client-side using flat HTML, native CSS, and vanilla JS. Content is loaded dynamically from Markdown files, ensuring the site is highly performant, portable, and easy to host on static web servers like GitHub Pages.
+This early iteration of the toolkit has been built as a **Single Page Application (SPA)** with zero build tools or dependencies, allowing it to be hosted easily on static environments (in this case github pages). Content is maintained in markdown files for easy editing and all source code is [maintained in github](https://github.com/d1sc0/safe_to_stretch).
