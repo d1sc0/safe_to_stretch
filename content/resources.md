@@ -49,7 +49,7 @@ Explores how creating a workplace climate where individuals feel comfortable spe
 
 ### Facilitation Blogs & Practical Articles
 
-Access quick-read columns and practitioner case studies that explore the practical realities of holding space, structuring sessions, and managing group tensions:
+These articles and blog posts from active practitioners share real-world experiences of holding space, managing group dynamics, and building trust. They offer practical ways to address senior authority, handle conflict, and use silence to make learning environments safer for everyone:
 
 - 📝 **Article**: [The Messy Middle: Holding Space Through Kaner’s Diamond of Participation (Tash Willcocks on Medium)](https://tash-willcocks.medium.com/the-messy-middle-holding-space-through-kaners-diamond-50e5eeb702bf) — Discusses Sam Kaner’s _Diamond of Participatory Decision-Making_ and how facilitators can hold space during the uncomfortable, divergent-to-convergent "messy middle" phase of group collaborations.
 - 📝 **Article**: [When the 3-Sided Polygon Wobbles… The Trust Triangle (Tash Willcocks on Medium)](https://medium.com/@tash-willcocks/when-the-triangle-wobbles-the-trust-triangle-1430e2875c83) — Breaks down Anne Morriss and Frances Frei's Trust Triangle model (Logic, Authenticity, Empathy), explaining how trust breaks when any of these components wobble and how facilitators can maintain balance through active listening and modeled vulnerability.
