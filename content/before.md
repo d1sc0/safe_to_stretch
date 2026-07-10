@@ -5,7 +5,7 @@ Proactive design and intentional parameter setting are crucial to neutralizing p
 ### 1. The Safety & Accessibility Audit
 
 - **Evaluate the Content Risk:** Is this training functional (low relational risk) or transformational (high identity risk)? Scale your safety infrastructure upward if the topic asks learners to change their mindsets or interpersonal behaviours.
-- **Map the Cohort Hierarchy:** Identify reporting lines within your attendee list. Expect junior staff to actively calculate the professional risk of speaking up or asking questions in front of senior leadership.
+- **Map the Cohort Hierarchy:** Identify reporting lines within your attendee list. Expect junior staff to actively calculate the professional risk of speaking up or asking questions in front of senior leadership. When appropriate (and feasible) consider segmenting cohorts by rank or levels of seniority to reduce potential tenions.
 - **Provide Flexible Pre-Work Options (UDL: Representation):** Do not rely solely on text-based reading lists. Share pre-session context through multiple formats—such as a short video, an audio summary, or a clean visual diagram—to reduce cognitive load and support diverse processing preferences.
 
 ### 2. The Facilitator’s Internal Landscape
