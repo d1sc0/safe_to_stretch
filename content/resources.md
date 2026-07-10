@@ -15,18 +15,18 @@ A framework that guides the design of learning environments to ensure they are a
 
 Explores how choices in learning design can accidentally trigger a defensive threat response in a professional's brain by challenging their **Status**, **Certainty**, **Autonomy**, **Relatedness**, or **Fairness**.
 
-- 📝 **Foundational Paper**: [SCARF: A Brain-Based Model for Collaborating with and Influencing Others (Semantic Scholar)](https://www.semanticscholar.org/paper/SCARF%3A-a-brain-based-model-for-collaborating-with-Rock/9bc7a61d1544ec3c2e171b3e8e20f019f2a7db68) — Original publication record and citation history of David Rock's 2008 paper in the *NeuroLeadership Journal*.
+- 📝 **Foundational Paper**: [SCARF: A Brain-Based Model for Collaborating with and Influencing Others (Semantic Scholar)](https://www.semanticscholar.org/paper/sCARF-%3A-a-brain-based-model-for-collaborating-with-Rock/4d8c839f37c385b24467385f0b4d45d820c78a0d) — Original publication record and citation history of David Rock's 2008 paper in the *NeuroLeadership Journal*.
 - 📝 **Bitesize Guide**: [The SCARF Model — Bitesize (Tash Willcocks on Medium)](https://tash-willcocks.medium.com/the-scarf-model-bitesize-e04585e156b9) — A practical, quick-read summary of how to recognize SCARF triggers in communication and use them to navigate team dynamics and feedback.
 - 🎥 **TEDx Talk**: [Learning About the Brain Changes Everything (YouTube)](https://www.youtube.com/watch?v=uDIyxxayNig) — Dr. David Rock explains the neural drivers of social behaviour at TEDxTokyo.
-- 🎙️ **Podcast**: [Your Brain at Work Podcast by NLI (Apple Podcasts)](https://podcasts.apple.com/us/podcast/your-brain-at-work/id1478142340) — Deep-dives into applying neuroscience to leadership and organisational dynamics.
-- 📖 **Book**: [_Your Brain at Work_ (Amazon)](https://www.amazon.com/Your-Brain-Work-Strategies-Distraction/dp/0061771695) — David Rock's book on managing cognitive load and social threats.
+- 🎙️ **Podcast**: [Your Brain at Work Podcast by NLI (Apple Podcasts)](https://podcasts.apple.com/us/podcast/your-brain-at-work/id1454559596) — Deep-dives into applying neuroscience to leadership and organisational dynamics.
+- 📖 **Book**: [_Your Brain at Work_ (Amazon)](https://www.amazon.com/dp/0062312820) — David Rock's book on managing cognitive load and social threats.
 
 ### Paulo Freire – Pedagogy of the Oppressed
 
 Illustrates how educational approaches are never neutral; they either mirror top-down corporate management styles (the "banking concept" of education) or act as a social fulcrum to empower active, participatory freedom.
 
 - 📖 **Access Book**: [Bloomsbury Publishing](https://www.bloomsbury.com/us/pedagogy-of-the-oppressed-9781501314131/) or read the free online text at [History Is A Weapon](https://www.historyisaweapon.com/defcon2/pedagogy/index.html).
-- 🎙️ **Podcast Deep-Dive**: [Philosophize This! Episode 210 (Spotify/Web)](https://www.philosophizethis.org/podcast/episode-210-the-pedagogy-of-the-oppressed) — Stephen West's breakdown of Freire's critical pedagogy and the banking model of education.
+- 🎙️ **Podcast Deep-Dive**: [Philosophize This! Episode 210 (Spotify/Web)](https://www.philosophizethis.org/podcast/episode-210-the-pedagogy-of-the-oppressed-paulo-freire-education) — Stephen West's breakdown of Freire's critical pedagogy and the banking model of education.
 - 🎥 **Video Series**: [Pedagogy of the Oppressed Chapter-by-Chapter (YouTube)](https://www.youtube.com/watch?v=kYv9yO4_hQo) — Detailed video analysis by academic Dr. Masood Raja.
 
 ### bell hooks – Engaged Pedagogy & Vulnerability
