@@ -1,6 +1,6 @@
 # 📢 DURING THE SESSION (Facilitation & Co-Creation)
 
-### 1. The Co-Creation Blueprint (Securing True Buy-In)
+### 1. The Co-Creation Blueprint
 
 Do not simply announce that "rank is paused" or "this is a safe space"— this can feel like a trap to junior staff. Spend time at the beginning of the sessions co-creating a **Session Charter** to give the group true ownership of the space: You may want to suggest some basic ground rules but build consensus around these and actively seek contributons from the cohort.
 
