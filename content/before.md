@@ -11,7 +11,7 @@ Proactive design and intentional parameter setting are crucial to neutralizing p
 ### 2. The Facilitator’s Internal Landscape
 
 - **Check Your Own Behavioral Triggers:** Reflect on how you react when a participant challenges your expertise, pushes back on a concept, or throws your lesson plan off-script. Acknowledge these triggers early so you can respond with some structure and non-defensive curiosity rather than shutting down the room.
-- **Model Vulnerability in the Architecture:** Design an opening activity where _you_ are required to share a past professional failure, mistake, or technical gap first.
+- **Model Vulnerability in the Architecture:** Design an opening activity where _you_ are required to share a past professional failure, mistake, or technical gap first. This directly applies bell hooks' concept of **engaged pedagogy**—the belief that the educator must share their own vulnerability to reduce classroom hierarchies and build trust: *“empowerment cannot happen if we refuse to be vulnerable while encouraging students to take risks”* (see [bell hooks – Engaged Pedagogy & Vulnerability](#resources)).
 
 ### 3. Asynchronous Digital Infrastructure
 
