@@ -1,6 +1,6 @@
 # 📚 DESIGNER RESOURCES & UNDERPINNING THEORIES
 
-Integrate these foundational texts and frameworks to deeply understand the mechanics behind this toolkit. Each resource includes a mix of books, videos, podcasts, and articles to support different learning preferences:
+This collection of resources brings together the key research, frameworks, and practical thinking that shaped the design of this toolkit. They explore the relationships between workplace hierarchy, learning design, and psychological safety. To suit different learning styles, we have included a mix of books, videos, podcasts, and articles for each topic:
 
 ### The Universal Design for Learning (UDL) Guidelines
 
@@ -15,7 +15,7 @@ A framework that guides the design of learning environments to ensure they are a
 
 Explores how choices in learning design can accidentally trigger a defensive threat response in a professional's brain by challenging their **Status**, **Certainty**, **Autonomy**, **Relatedness**, or **Fairness**.
 
-- 📝 **Foundational Paper**: [SCARF: A Brain-Based Model for Collaborating with and Influencing Others](https://neuroleadership.com/your-brain-at-work/the-scarf-model-using-neuroscience-to-work-better-with-others/) — Original publication in the *NeuroLeadership Journal*.
+- 📝 **Foundational Paper**: [SCARF: A Brain-Based Model for Collaborating with and Influencing Others](https://neuroleadership.com/your-brain-at-work/the-scarf-model-using-neuroscience-to-work-better-with-others/) — Original publication in the _NeuroLeadership Journal_.
 - 📝 **Bitesize Guide**: [The SCARF Model — Bitesize (Tash Willcocks on Medium)](https://tash-willcocks.medium.com/the-scarf-model-bitesize-e04585e156b9) — A practical, quick-read summary of how to recognize SCARF triggers in communication and use them to navigate team dynamics and feedback.
 - 🎥 **TEDx Talk**: [Learning About the Brain Changes Everything (YouTube)](https://www.youtube.com/watch?v=5aH2A36wT_s) — Dr. David Rock explains the neural drivers of social behaviour at TEDxTokyo.
 - 🎙️ **Podcast**: [Your Brain at Work Podcast by NLI](https://neuroleadership.com/your-brain-at-work-podcast/) — Deep-dives into applying neuroscience to leadership and organisational dynamics.
@@ -51,7 +51,7 @@ Explores how creating a workplace climate where individuals feel comfortable spe
 
 Access quick-read columns and practitioner case studies that explore the practical realities of holding space, structuring sessions, and managing group tensions:
 
-- 📝 **Article**: [The Messy Middle: Holding Space Through Kaner’s Diamond of Participation (Tash Willcocks on Medium)](https://tash-willcocks.medium.com/the-messy-middle-holding-space-through-kaners-diamond-50e5eeb702bf) — Discusses Sam Kaner’s *Diamond of Participatory Decision-Making* and how facilitators can hold space during the uncomfortable, divergent-to-convergent "messy middle" phase of group collaborations.
+- 📝 **Article**: [The Messy Middle: Holding Space Through Kaner’s Diamond of Participation (Tash Willcocks on Medium)](https://tash-willcocks.medium.com/the-messy-middle-holding-space-through-kaners-diamond-50e5eeb702bf) — Discusses Sam Kaner’s _Diamond of Participatory Decision-Making_ and how facilitators can hold space during the uncomfortable, divergent-to-convergent "messy middle" phase of group collaborations.
 - 📝 **Article**: [When the 3-Sided Polygon Wobbles… The Trust Triangle (Tash Willcocks on Medium)](https://medium.com/@tash-willcocks/when-the-triangle-wobbles-the-trust-triangle-1430e2875c83) — Breaks down Anne Morriss and Frances Frei's Trust Triangle model (Logic, Authenticity, Empathy), explaining how trust breaks when any of these components wobble and how facilitators can maintain balance through active listening and modeled vulnerability.
 - 📝 **Article**: [How to Help Your (Human) HiPPO (Tash Willcocks on Medium)](https://medium.com/@tash-willcocks/how-to-help-your-hippo-cb554c4b8aca) — Uses the metaphor of Colombia's invasive hippos to discuss HiPPOs (Highest Paid Person's Opinion) in workshops, offering facilitation tips to channel executive authority into collaborative contributions rather than silencing the room.
 - 📝 **Article**: [Drammmmmmma Triangle to Empowerment Dynamic (Tash Willcocks on Medium)](https://medium.com/@tash-willcocks/drammmmmmma-triangle-to-empowerment-dynamic-b491cf47d54b) — Examines Stephen Karpman's Drama Triangle (Victim, Persecutor, Rescuer) and shows how facilitators and teams can pivot to David Emerald's Empowerment Dynamic (TED) to replace anxiety-driven blame with outcome-focused trust.
