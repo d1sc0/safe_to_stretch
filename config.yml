@@ -28,7 +28,7 @@ cards:
     description: 'Run your live session with flat status hierarchies. Co-create session roles, manage airtime fairly, consider anonymity'
   after:
     title: '🔄 After'
-    description: 'Review successes and failures. Analyze participation splits, analyse feedback and iterate your sessions design.'
+    description: 'Review successes and failures. Analyse participation splits, analyse feedback and iterate your session design.'
 
 # Feedback Target Settings
 # To receive feedback directly in your inbox, generate a free access key at https://web3forms.com

@@ -17,8 +17,8 @@ Explores how choices in learning design can accidentally trigger a defensive thr
 
 - 📝 **Foundational Paper**: [SCARF: A Brain-Based Model for Collaborating with and Influencing Others](https://neuroleadership.com/your-brain-at-work/the-scarf-model-using-neuroscience-to-work-better-with-others/) — Original publication in the *NeuroLeadership Journal*.
 - 📝 **Bitesize Guide**: [The SCARF Model — Bitesize (Tash Willcocks on Medium)](https://tash-willcocks.medium.com/the-scarf-model-bitesize-e04585e156b9) — A practical, quick-read summary of how to recognize SCARF triggers in communication and use them to navigate team dynamics and feedback.
-- 🎥 **TEDx Talk**: [Learning About the Brain Changes Everything (YouTube)](https://www.youtube.com/watch?v=5aH2A36wT_s) — Dr. David Rock explains the neural drivers of social behavior at TEDxTokyo.
-- 🎙️ **Podcast**: [Your Brain at Work Podcast by NLI](https://neuroleadership.com/your-brain-at-work-podcast/) — Deep-dives into applying neuroscience to leadership and organizational dynamics.
+- 🎥 **TEDx Talk**: [Learning About the Brain Changes Everything (YouTube)](https://www.youtube.com/watch?v=5aH2A36wT_s) — Dr. David Rock explains the neural drivers of social behaviour at TEDxTokyo.
+- 🎙️ **Podcast**: [Your Brain at Work Podcast by NLI](https://neuroleadership.com/your-brain-at-work-podcast/) — Deep-dives into applying neuroscience to leadership and organisational dynamics.
 - 📖 **Book**: [_Your Brain at Work_ (Amazon)](https://www.amazon.com/Your-Brain-Work-Strategies-Distraction/dp/0061771695) — David Rock's book on managing cognitive load and social threats.
 
 ### Paulo Freire – Pedagogy of the Oppressed
@@ -42,7 +42,7 @@ Examines the concept of engaged pedagogy, demonstrating how a facilitator bringi
 
 Explores how creating a workplace climate where individuals feel comfortable speaking up, sharing concerns, and asking questions is crucial for learning, innovation, and overall team performance.
 
-- 📖 **Book**: [_The Fearless Organization_ (Amazon)](https://www.amazon.com/Fearless-Organization-Creating-Psychological-Workplace/dp/1119478947) — The definitive guide on cultivating psychological safety in organizations.
+- 📖 **Book**: [_The Fearless Organization_ (Amazon)](https://www.amazon.com/Fearless-Organization-Creating-Psychological-Workplace/dp/1119478947) — The definitive guide on cultivating psychological safety in organisations.
 - 🎥 **TEDx Talk**: [Building a Psychologically Safe Workplace (YouTube)](https://www.youtube.com/watch?v=LhoLuui9gX8) — Dr. Amy Edmondson's classic talk at TEDxHGSE.
 - 🎙️ **Podcast**: [HBR IdeaCast: Creating Psychological Safety in the Workplace](https://hbr.org/podcast/2019/01/creating-psychological-safety-in-the-workplace) — HBR's interview on why psychological safety is not about "being nice."
 - 🎙️ **Adam Grant Podcast**: [WorkLife: Is it Safe to Speak Up at Work? (TED Podcasts)](https://www.ted.com/podcasts/worklife/is-it-safe-to-speak-up-at-work) — Episode focusing on the culture of voice versus silence, featuring Amy Edmondson.
