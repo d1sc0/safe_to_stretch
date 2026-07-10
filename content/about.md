@@ -1,8 +1,10 @@
 # About the Safe to Stretch Toolkit
 
-This toolkit was made by [Stuart Mackenzie](https://hellostu.xyz) as part of the masters programme in Creative Teaching and Learning Design at Arts University Bournemouth
+This toolkit was made by [Stuart Mackenzie](https://hellostu.xyz) as part of the masters programme in Creative Teaching and Learning Design at Arts University Bournemouth.
 
-Much of the content and ideas here have been pulled together from a variety of sources. Many of these source will be listed on the [resources page](#resources).
+The idea for this toolkit stemmed from completing secondary and primary research into the factors with can inhibit workplace learning. Specifically primary research gave rise to insight that hidden curriculum of an organisation and strucutural power dynamics within group settings can prohibit the physcological safe consitions required for learners to stretch themselves, engage fully, speak openly and honestly and make mistakes.
+
+The content and ideas here have been pulled together from a variety of sources. Many of these source will be listed on the [resources page](#resources).
 
 I plan to test this toolkit with other people over coming weeks (alongside the work being assessed) and if the feedback is positive I may move it to a more permanent home on the internet where it can more easily found. If you're interested in contributing please get in [touch](/feedback.html).
 
