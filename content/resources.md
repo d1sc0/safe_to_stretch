@@ -15,7 +15,7 @@ A framework that guides the design of learning environments to ensure they are a
 
 Explores how choices in learning design can accidentally trigger a defensive threat response in a professional's brain by challenging their **Status**, **Certainty**, **Autonomy**, **Relatedness**, or **Fairness**.
 
-- 📝 **Foundational Paper**: [SCARF: A Brain-Based Model for Collaborating with and Influencing Others (Semantic Scholar)](https://www.semanticscholar.org/paper/e85194488b1f516a575a022137910a30b6f98725) — Original publication record and citation history of David Rock's 2008 paper in the *NeuroLeadership Journal*.
+- 📝 **Encyclopedic Overview**: [SCARF Model Overview (Wikipedia)](https://en.wikipedia.org/wiki/David_Rock_(consultant)#SCARF_model) — A clean, ad-free explanation of the SCARF framework, its development, the five social domains, and its applications in organisational psychology.
 - 📝 **Bitesize Guide**: [The SCARF Model — Bitesize (Tash Willcocks on Medium)](https://tash-willcocks.medium.com/the-scarf-model-bitesize-e04585e156b9) — A practical, quick-read summary of how to recognize SCARF triggers in communication and use them to navigate team dynamics and feedback.
 - 🎥 **TEDx Talk**: [Learning About the Brain Changes Everything (YouTube)](https://www.youtube.com/watch?v=uDIyxxayNig) — Dr. David Rock explains the neural drivers of social behaviour at TEDxTokyo.
 - 🎙️ **Podcast**: [Your Brain at Work Podcast by NLI (Apple Podcasts)](https://podcasts.apple.com/us/podcast/your-brain-at-work/id1453229871) — Deep-dives into applying neuroscience to leadership and organisational dynamics.
